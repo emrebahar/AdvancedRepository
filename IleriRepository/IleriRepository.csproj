@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8E4B136-3FBD-45BE-AEA2-BEFF02E160C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IleriRepository</RootNamespace>
+    <AssemblyName>IleriRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Concrete\BasePeople.cs" />
+    <Compile Include="Concrete\BaseTable.cs" />
+    <Compile Include="Concrete\City.cs" />
+    <Compile Include="Concrete\District.cs" />
+    <Compile Include="Concrete\Education.cs" />
+    <Compile Include="Concrete\Personnel.cs" />
+    <Compile Include="Concrete\Student.cs" />
+    <Compile Include="Concrete\Lecturer.cs" />
+    <Compile Include="Context\DatabaseContext.cs" />
+    <Compile Include="DTO\BaseTableDTO.cs" />
+    <Compile Include="DTO\DistrictDTO.cs" />
+    <Compile Include="DTO\PeopleDTO.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCity.Designer.cs">
+      <DependentUpon>FrmCity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDistrict.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDistrict.Designer.cs">
+      <DependentUpon>FrmDistrict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEducation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEducation.Designer.cs">
+      <DependentUpon>FrmEducation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmLecturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLecturer.Designer.cs">
+      <DependentUpon>FrmLecturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPersonnel.Designer.cs">
+      <DependentUpon>FrmPersonnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmStudent.Designer.cs">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112021335438_CreateDatabase.cs" />
+    <Compile Include="Migrations\202112021335438_CreateDatabase.Designer.cs">
+      <DependentUpon>202112021335438_CreateDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseRepository\Abstract\IBaseRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Abstract\IBaseTableRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Abstract\ICityRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Abstract\IDistrictRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Abstract\IEducationRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Abstract\IPeopleRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Abstract\IPersonnelRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Abstract\IStudentRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Abstract\ITeacherRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Concrete\BaseTableRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Concrete\CityRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Concrete\DistrictRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Concrete\EducationRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Concrete\IBaseTable.cs" />
+    <Compile Include="Repositories\BaseRepository\Concrete\PersonnelRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Concrete\BaseRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Concrete\TeacherRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Concrete\PeopleRepository.cs" />
+    <Compile Include="Repositories\BaseRepository\Concrete\StudentRepository.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCity.resx">
+      <DependentUpon>FrmCity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDistrict.resx">
+      <DependentUpon>FrmDistrict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEducation.resx">
+      <DependentUpon>FrmEducation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLecturer.resx">
+      <DependentUpon>FrmLecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPersonnel.resx">
+      <DependentUpon>FrmPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmStudent.resx">
+      <DependentUpon>FrmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112021335438_CreateDatabase.resx">
+      <DependentUpon>202112021335438_CreateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
